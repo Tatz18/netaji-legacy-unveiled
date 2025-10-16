@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +15,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", to: "home" },
-    { name: "Biography", to: "biography" },
-    { name: "Timeline", to: "timeline" },
-    { name: "INA", to: "ina" },
-    { name: "The Mystery", to: "mystery" },
-    { name: "Quotes", to: "quotes" },
-    { name: "Gallery", to: "gallery" },
+    { name: "Home", to: "/" },
+    { name: "Biography", to: "/biography" },
+    { name: "Timeline", to: "/timeline" },
+    { name: "INA", to: "/ina" },
+    { name: "The Mystery", to: "/mystery" },
+    { name: "Quotes", to: "/quotes" },
+    { name: "Gallery", to: "/gallery" },
   ];
 
   return (
@@ -35,10 +35,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            className="font-serif text-2xl font-bold text-primary cursor-pointer"
+            to="/"
+            className="font-serif text-2xl font-bold text-primary"
           >
             Netaji
           </Link>
@@ -49,10 +47,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="text-foreground hover:text-primary transition-colors cursor-pointer font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.name}
               </Link>
@@ -76,11 +71,8 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-80}
                 onClick={() => setIsOpen(false)}
-                className="block text-foreground hover:text-primary transition-colors cursor-pointer font-medium"
+                className="block text-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.name}
               </Link>

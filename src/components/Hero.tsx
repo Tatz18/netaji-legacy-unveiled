@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/netaji-hero.jpg";
 
 const Hero = () => {
@@ -28,7 +28,7 @@ const Hero = () => {
           Freedom fighter, visionary leader, and founder of the Indian National Army. 
           Discover the extraordinary life and enduring legacy of India's most courageous patriot.
         </p>
-        <Link to="biography" smooth={true} duration={500} offset={-80}>
+        <Link to="/biography">
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg px-8 py-6 animate-scale-in"
